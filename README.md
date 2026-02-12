@@ -1,4 +1,4 @@
-# Deep Sketch-Based 3D Modeling (DS-3DM) 
+# Awesome Deep Sketch-Based 3D Modeling (DS-3DM) 
 
 
 
