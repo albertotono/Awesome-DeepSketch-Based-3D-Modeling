@@ -35,7 +35,7 @@ jobs:
 
       # --- STEP 4: Run Agent ---
       - name: Run The Scout
-        run: python free_agent.py
+        run: python scout_agent.py
 
       # --- STEP 5: Create PR ---
       - name: Check Results
