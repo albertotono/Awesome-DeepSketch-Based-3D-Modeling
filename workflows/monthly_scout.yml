@@ -1,0 +1,60 @@
+name: 🕵️ Monthly Research Scout
+
+on:
+  schedule:
+    # Runs at 00:00 UTC on the 1st of every month
+    - cron: '0 0 1 * *'
+  # Allows you to click "Run workflow" manually for testing
+  workflow_dispatch:
+
+jobs:
+  scout-research:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install Dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run Scout Agent
+        env:
+          # This maps your repository secret to the script's environment
+          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+        run: python scout_agent.py
+
+      - name: Check for Results
+        id: check_results
+        run: |
+          if [ -f new_papers_found.md ]; then
+            echo "has_papers=true" >> $GITHUB_OUTPUT
+          else
+            echo "has_papers=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create Pull Request
+        if: steps.check_results.outputs.has_papers == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "🤖 Agent: Found new papers for $(date +'%B %Y')"
+          title: "🤖 Research Scout: New Papers for $(date +'%B %Y')"
+          body: |
+            The monthly scout agent found potential new papers!
+            
+            Please review the list below. If they look correct, copy-paste them into your main README.md and merge this PR (or close it after copying).
+            
+            ---
+            
+            $(cat new_papers_found.md)
+          branch: "agent/monthly-update"
+          delete-branch: true
