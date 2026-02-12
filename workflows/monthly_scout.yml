@@ -1,60 +1,59 @@
-name: 🕵️ Monthly Research Scout
+name: 🦞 Monthly Free Scout (No Keys)
 
 on:
   schedule:
-    # Runs at 00:00 UTC on the 1st of every month
-    - cron: '0 0 1 * *'
-  # Allows you to click "Run workflow" manually for testing
+    - cron: '0 0 1 * *' # 1st of every month
   workflow_dispatch:
 
 jobs:
-  scout-research:
+  agent-run:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      pull-requests: write
-
     steps:
-      - name: Checkout Repository
+      - name: Checkout Repo
         uses: actions/checkout@v4
 
+      # --- STEP 1: Install Ollama (The Free Brain) ---
+      - name: Install & Start Ollama
+        run: |
+          curl -fsSL https://ollama.com/install.sh | sh
+          ollama serve & 
+          echo "Waiting for Ollama to wake up..."
+          sleep 5
+          
+      # --- STEP 2: Download Model ---
+      - name: Pull Llama 3.2 (Small & Fast)
+        run: ollama pull llama3.2
+
+      # --- STEP 3: Setup Python ---
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.10'
 
-      - name: Install Dependencies
+      - name: Install Tools
         run: pip install -r requirements.txt
 
-      - name: Run Scout Agent
-        env:
-          # This maps your repository secret to the script's environment
-          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
-        run: python scout_agent.py
+      # --- STEP 4: Run Agent ---
+      - name: Run The Scout
+        run: python free_agent.py
 
-      - name: Check for Results
-        id: check_results
+      # --- STEP 5: Create PR ---
+      - name: Check Results
+        id: check_files
         run: |
-          if [ -f new_papers_found.md ]; then
+          if [ -f new_papers_free.md ]; then
             echo "has_papers=true" >> $GITHUB_OUTPUT
-          else
-            echo "has_papers=false" >> $GITHUB_OUTPUT
           fi
 
       - name: Create Pull Request
-        if: steps.check_results.outputs.has_papers == 'true'
+        if: steps.check_files.outputs.has_papers == 'true'
         uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "🤖 Agent: Found new papers for $(date +'%B %Y')"
-          title: "🤖 Research Scout: New Papers for $(date +'%B %Y')"
+          title: "🦞 Agent found new papers (Free Mode)"
           body: |
-            The monthly scout agent found potential new papers!
+            This run used **DuckDuckGo** and **Llama 3.2** (running locally).
             
-            Please review the list below. If they look correct, copy-paste them into your main README.md and merge this PR (or close it after copying).
-            
-            ---
-            
-            $(cat new_papers_found.md)
-          branch: "agent/monthly-update"
-          delete-branch: true
+            Results:
+            $(cat new_papers_free.md)
+          branch: "agent/free-update"
