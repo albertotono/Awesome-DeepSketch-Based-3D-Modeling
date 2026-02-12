@@ -47,6 +47,8 @@
 | 2025 | [MeshPad: Interactive Sketch Conditioned Artistic-designed Mesh Generation and Editing](https://arxiv.org/abs/2503.01425)| ICCV 2025 | [[webpage]](https://derkleineli.github.io/meshpad/) |
 | 2025 | [PASTA: Part-Aware Sketch-to-3D Shape Generation with Text-Aligned Prior](https://openaccess.thecvf.com/content/ICCV2025/papers/Lee_PASTA_Part-Aware_Sketch-to-3D_Shape_Generation_with_Text-Aligned_Prior_ICCV_2025_paper.pdf)| ICCV 2025 | [[webpage]](https://kuai-lab.github.io/iccv2025pasta/) [[code]](https://github.com/kuai-lab/iccv25_pasta) |
 | 2025 | [Variational Neural Surfacing of 3D Sketches](http://www-labs.iro.umontreal.ca/~bmpix/pdf/surfacing_3d_sketches.pdf)| SIGGRAPH Asia 2025 |  |
+| 2025 | [Freehand Sketch-Based 3D Reconstruction with Contour Constraints via Elastic Metrics](https://dl.acm.org/doi/10.1145/3756884.3766043)| VRST '25 |  |
+| 2026 | [From Sketch to Reality: Enabling High-Quality, Cross-Category 3D Model Generation from Free-Hand Sketches with Minimal Data](https://ieeexplore.ieee.org/document/11372956?dld=c3RhbmZvcmQuZWR1&source=SEARCHALERT)| IEEE |  |
 
 
 Credit: 
