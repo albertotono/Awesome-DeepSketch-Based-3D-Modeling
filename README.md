@@ -49,6 +49,8 @@
 | 2025 | [Variational Neural Surfacing of 3D Sketches](http://www-labs.iro.umontreal.ca/~bmpix/pdf/surfacing_3d_sketches.pdf)| SIGGRAPH Asia 2025 |  |
 | 2025 | [Freehand Sketch-Based 3D Reconstruction with Contour Constraints via Elastic Metrics](https://dl.acm.org/doi/10.1145/3756884.3766043)| VRST '25 |  |
 | 2026 | [From Sketch to Reality: Enabling High-Quality, Cross-Category 3D Model Generation from Free-Hand Sketches with Minimal Data](https://ieeexplore.ieee.org/document/11372956?dld=c3RhbmZvcmQuZWR1&source=SEARCHALERT)| IEEE |  |
+| 2026 | [S2CF: Context-Aware Feature-Based CAD Model Generation Based on Free-Hand Sketches](https://link.springer.com/chapter/10.1007/978-981-95-5737-0_5)| PRCV 2025 |  |
+
 
 
 Credit: 
