@@ -47,6 +47,8 @@
 | 2025 | [MeshPad: Interactive Sketch Conditioned Artistic-designed Mesh Generation and Editing](https://arxiv.org/abs/2503.01425)| ICCV 2025 | [[webpage]](https://derkleineli.github.io/meshpad/) |
 | 2025 | [PASTA: Part-Aware Sketch-to-3D Shape Generation with Text-Aligned Prior](https://openaccess.thecvf.com/content/ICCV2025/papers/Lee_PASTA_Part-Aware_Sketch-to-3D_Shape_Generation_with_Text-Aligned_Prior_ICCV_2025_paper.pdf)| ICCV 2025 | [[webpage]](https://kuai-lab.github.io/iccv2025pasta/) [[code]](https://github.com/kuai-lab/iccv25_pasta) |
 | 2025 | [Freehand Sketch-Based 3D Reconstruction with Contour Constraints via Elastic Metrics](https://dl.acm.org/doi/10.1145/3756884.3766043)| VRST '25 |  |
+| 2025 | [Editing] [Sketch-guided Cage-based 3D Gaussian Splatting Deformation](https://arxiv.org/pdf/2411.12168)| |  |
+| 2025 | [G-SPVD: Image and Sketch Guided Point Cloud Generation with Sparse Point-Voxel Diffusion Models](https://ieeexplore.ieee.org/document/11396860?dld=c3RhbmZvcmQuZWR1&source=SEARCHALERT)| IEEE Visual Communications and Image Processing (VCIP) 2025 |  |
 | 2026 | [From Sketch to Reality: Enabling High-Quality, Cross-Category 3D Model Generation from Free-Hand Sketches with Minimal Data](https://ieeexplore.ieee.org/document/11372956?dld=c3RhbmZvcmQuZWR1&source=SEARCHALERT)| IEEE |  |
 | 2026 | [S2CF: Context-Aware Feature-Based CAD Model Generation Based on Free-Hand Sketches](https://link.springer.com/chapter/10.1007/978-981-95-5737-0_5)| PRCV 2025 |  |
 | 2026 | [OmniSketch: Sketch-Guided Text-to-3D Generation with High-Fidelity Geometry and Texture](https://ieeexplore-ieee-org.stanford.idm.oclc.org/stamp/stamp.jsp?tp=&arnumber=11406887&tag=1)| IEEE Computer Graphics and Applications 2026 |  |
